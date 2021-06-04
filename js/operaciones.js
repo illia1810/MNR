@@ -1,8 +1,8 @@
 var cadenaSalida; // 
 var separadorLinea = ":" ;
-var R = new Array(); // Valores de registro
+var R = new Array();
 var lineaActual; // 
-var totInstrucciones; // instrucciones ejecutadas
+var totInstrucciones;
 
 function iniciarVariables(){
 
@@ -20,17 +20,16 @@ function iniciarVariables(){
 
 function varRegistradas(arr){
 
-	// Valores del registro
 
 	var str= form1.registerValues.value;
-	var len; // tamaño de cadena
-	var r; // indice
+	var len; 
+	var r; 
 	var i,j,temp;
 	
 	if(str=="") return;
-	//	cadenaSalida += "Input: "
+	
 	str=quitarEspacios(str);
-	str+="," // ultimo valor
+	str+="," 
 	len=str.length;
 	
 	for(i=0,r=1; i<len; ){
@@ -45,14 +44,14 @@ function varRegistradas(arr){
 		i=j+1; // 
 	}
 
-	//	cadenaSalida += "\n\n"
+
 
 }
 
 function runSim() {
 
 	var lines = new Array();
-	var nlines; // lineas totales
+	var nlines;
 	var progStr=form1.progtext.value +")";
 	var r, r2; 
 	var curPos; 
@@ -94,7 +93,7 @@ function runSim() {
 				}
 				nextPos = siguienteNoDigito(progStr,curPos);
 		r=Number(progStr.slice(curPos,nextPos)); 
-		R[r]=0; // r igual a 0
+		R[r]=0; 
 		if(showRegs) cadenaSalida += lineaActual + ":R" + r + "=" + R[r] + "\n";
 		++lineaActual;
 	}
@@ -212,7 +211,7 @@ function runSim() {
 
 		crearFila()
 
-	} //   main loop
+	} 
 	
 	totInstrucciones += nInstructions; 
 
